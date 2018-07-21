@@ -9,32 +9,32 @@ public class Chapter02Test {
 	
 	@Test
 	public void testarImpressaoUsuarios() {
-		Chapter2.imprimirNomes();
+		Chapter02.imprimirNomes();
 	}
 	
 	@Test
 	public void testarImpressaoNomesForEach() {
-		Chapter2.imprimirNomesForEach();
+		Chapter02.imprimirNomesForEach();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaExtenso() {
-		Chapter2.imprimirNomesLambdaExtenso();
+		Chapter02.imprimirNomesLambdaExtenso();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaTipoImplicitoComChaves() {
-		Chapter2.imprimirNomesLambdaTipoImplicitoComChaves();
+		Chapter02.imprimirNomesLambdaTipoImplicitoComChaves();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaTipoImplicitoSemChaves() {
-		Chapter2.imprimirNomesLambdaTipoImplicitoComChaves();
+		Chapter02.imprimirNomesLambdaTipoImplicitoComChaves();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaEnxuto() {
-		Chapter2.imprimirNomesLambdaEnxuto();
+		Chapter02.imprimirNomesLambdaEnxuto();
 	}
 	
 }
