@@ -1,10 +1,10 @@
-package java8.lambda;
+package java8.lambda.chapter02;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class Capitulo2 {
+public class Chapter2 {
 	
 	/**
 	 * Public Methods
