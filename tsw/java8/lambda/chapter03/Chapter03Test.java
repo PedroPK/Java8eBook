@@ -40,6 +40,11 @@ public class Chapter03Test {
 	}
 	
 	@Test
+	public void testCepValidationOlindaWithoutDotWithoutHyfenWithSpace() {
+		Assert.assertFalse( Chapter03.validateCep("53130 080") );
+	}
+	
+	@Test
 	public void testCepValidationOlindaWithDot() {
 		Assert.assertTrue( Chapter03.validateCep("53.130-080") );
 	}
@@ -50,8 +55,23 @@ public class Chapter03Test {
 	}
 	
 	@Test
-	public void testCepValidationOlindaWithExtraDigit() {
+	public void testCepValidationOlindaWith7Digits() {
+		Assert.assertFalse( Chapter03.validateCep("5313008") );
+	}
+	
+	@Test
+	public void testCepValidationOlindaWith9Digits() {
 		Assert.assertFalse( Chapter03.validateCep("531300800") );
+	}
+	
+	@Test
+	public void testCepValidationOlindaWith10Digits() {
+		Assert.assertFalse( Chapter03.validateCep("5313008000") );
+	}
+	
+	@Test
+	public void testCepValidationOlindaWithAtSymbol() {
+		Assert.assertFalse( Chapter03.validateCep("53130080@") );
 	}
 	
 }

@@ -37,7 +37,7 @@ public class Chapter03 {
 	public static boolean validateCep(String pString) {
 		Validator<String> cepValidator = new Validator<String>() {
 			public boolean validate(String pStringToValidade) {
-				return pStringToValidade.matches("[0-9]{2}.?[0-9]{3}-?[0-9]{3}");
+				return pStringToValidade.matches("[0-9]{2}[.]?[0-9]{3}[-]?[0-9]{3}");
 			}
 		};
 		
