@@ -1,40 +1,40 @@
-package java8.lambda;
+package java8.lambda.chapter02;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.JVM)
-public class Capitulo2Test {
+public class Chapter02Test {
 	
 	@Test
 	public void testarImpressaoUsuarios() {
-		Capitulo2.imprimirNomes();
+		Chapter02.imprimirNomes();
 	}
 	
 	@Test
 	public void testarImpressaoNomesForEach() {
-		Capitulo2.imprimirNomesForEach();
+		Chapter02.imprimirNomesForEach();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaExtenso() {
-		Capitulo2.imprimirNomesLambdaExtenso();
+		Chapter02.imprimirNomesLambdaExtenso();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaTipoImplicitoComChaves() {
-		Capitulo2.imprimirNomesLambdaTipoImplicitoComChaves();
+		Chapter02.imprimirNomesLambdaTipoImplicitoComChaves();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaTipoImplicitoSemChaves() {
-		Capitulo2.imprimirNomesLambdaTipoImplicitoComChaves();
+		Chapter02.imprimirNomesLambdaTipoImplicitoComChaves();
 	}
 	
 	@Test
 	public void testarImpressaoNomesLambdaEnxuto() {
-		Capitulo2.imprimirNomesLambdaEnxuto();
+		Chapter02.imprimirNomesLambdaEnxuto();
 	}
 	
 }

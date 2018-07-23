@@ -1,4 +1,4 @@
-package java8.lambda;
+package java8.lambda.chapter02;
 
 public class Usuario {
 	
