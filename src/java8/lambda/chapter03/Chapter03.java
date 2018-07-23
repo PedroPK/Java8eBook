@@ -44,4 +44,14 @@ public class Chapter03 {
 		return cepValidator.validate(pString);
 	}
 	
+	public void accessingNonFinalVariables() {
+		int number = 5;
+		new Thread (
+			() -> {
+				System.out.println(number);
+			}
+		).start();
+		
+		//number = 10;
+	}
 }
