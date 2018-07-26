@@ -87,7 +87,7 @@ public class Chapter02 {
 		System.out.println("-- ----------------- --\n");
 	}
 	
-	private static List<Usuario> getListaUsuarios() {
+	public static List<Usuario> getListaUsuarios() {
 		Usuario um		= new Usuario("Paulo Silveira");
 		Usuario dois	= new Usuario("Guilherme Silveira");
 		Usuario tres	= new Usuario("Rodrigo Turini");
