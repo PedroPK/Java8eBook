@@ -14,7 +14,8 @@ public class Chapter05 {
 			@Override
 			public int compare(Usuario pUser01, Usuario pUser02) {
 				return
-					pUser01.getNome().compareTo(pUser02.getNome());
+					pUser01.getNome().compareTo(
+					pUser02.getNome());
 			}
 		};
 		

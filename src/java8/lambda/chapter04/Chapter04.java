@@ -7,15 +7,16 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import java8.lambda.chapter02.Usuario;
+import static java8.utils.UtilsLibrary.*;
 
 public class Chapter04 {
 	
 	public static void forEachExample() {
 		List<Usuario> users = getUsersList();
 		
-		Consumer<Usuario> userConsumer = user -> System.out.println("Before printing names.");
+		Consumer<Usuario> userConsumer = user -> print("Before printing names.");
 		
-		Consumer<Usuario> printUsersNames = user -> System.out.println(user.getNome() + "\n");
+		Consumer<Usuario> printUsersNames = user -> print(user.getNome() + "\n");
 		
 		users.forEach(userConsumer.andThen(printUsersNames));
 	}
@@ -30,14 +31,14 @@ public class Chapter04 {
 		List<Usuario> users = getUsersList();
 		users.removeIf(lessThenHundredPoints);
 		
-		users.forEach(user -> System.out.println(user.getNome()));
+		users.forEach(user -> print(user.getNome()));
 	}
 	
 	public static void lambdaImplicitPredicateExample() {
 		List<Usuario> users = getUsersList();
 		users.removeIf(user -> user.getPontuacao() < 100);
 		
-		users.forEach(user -> System.out.println(user.getNome()));
+		users.forEach(user -> print(user.getNome()));
 	}
 	
 	public static List<Usuario> getUsersList() {
