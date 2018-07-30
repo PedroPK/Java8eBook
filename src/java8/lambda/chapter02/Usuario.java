@@ -41,4 +41,10 @@ public class Usuario {
 		return this.aIsModerador;
 	}
 	
+	public boolean equals(Usuario pUser) {
+		return
+			this.getNome()		.equals(	pUser.getNome()			)	&&
+			this.getPontuacao()	==			pUser.getPontuacao();
+	}
+	
 }

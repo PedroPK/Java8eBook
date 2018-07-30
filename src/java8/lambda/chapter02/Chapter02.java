@@ -82,11 +82,13 @@ public class Chapter02 {
 	}
 	
 	public static List<Usuario> getListaUsuarios() {
-		Usuario um		= new Usuario("Paulo Silveira");
-		Usuario dois	= new Usuario("Guilherme Silveira");
-		Usuario tres	= new Usuario("Rodrigo Turini");
+		Usuario um			= new Usuario("Paulo Silveira");
+		Usuario umPontoUm	= new Usuario("Paulo SILVEIRA");
+		Usuario dois		= new Usuario("Rodrigo Turini");
+		Usuario tres		= new Usuario("Guilherme Silveira");
 		
-		List<Usuario> usuarios = Arrays.asList(um, dois, tres);
+		
+		List<Usuario> usuarios = Arrays.asList(um, umPontoUm, dois, tres);
 		return usuarios;
 	}
 	
