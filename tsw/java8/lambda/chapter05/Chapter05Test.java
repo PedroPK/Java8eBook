@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java8.lambda.chapter02.Chapter02;
 import java8.lambda.chapter02.Usuario;
+import java8.utils.UtilsLibrary;
 
 public class Chapter05Test {
 	
@@ -15,9 +16,46 @@ public class Chapter05Test {
 		List<Usuario> unsortedList	= Chapter02.getListaUsuarios();
 		List<Usuario> sortedList	= Chapter05.sort(Chapter02.getListaUsuarios());
 		
-		assertEquals(		unsortedList.size(),		sortedList.size()	);
-		assertNotEquals(	sortedList,					unsortedList);
-		assertNotSame(		sortedList,					unsortedList);
+		assertEquals(			unsortedList.size(),		sortedList.size()	);
+		assertNotEquals(		sortedList,					unsortedList);
+		assertNotSame(			sortedList,					unsortedList);
+		
+		boolean areAllUsersEquals = assertAllUsersAreEquals(unsortedList,				sortedList);
+		assertFalse(		areAllUsersEquals	);
+	}
+	
+	@Test
+	public void testSortWithComparatorAndLambdaExtended() {
+		List<Usuario> unsortedList	= Chapter02.getListaUsuarios();
+		List<Usuario> sortedList	= Chapter05.sortWithComparatorAndLambdaExtended(Chapter02.getListaUsuarios());
+		
+		assertEquals(			unsortedList.size(),		sortedList.size()	);
+		assertNotEquals(		sortedList,					unsortedList);
+		assertNotSame(			sortedList,					unsortedList);
+		
+		boolean areAllUsersEquals = assertAllUsersAreEquals(unsortedList,				sortedList);
+		assertFalse(		areAllUsersEquals	);
+		
+		/*for (Usuario user: sortedList) {
+			UtilsLibrary.print( user.getNome() );
+		}*/
+	}
+	
+	@Test
+	public void testSortWithComparatorAndLambdaShort() {
+		List<Usuario> unsortedList	= Chapter02.getListaUsuarios();
+		List<Usuario> sortedList	= Chapter05.sortWithComparatorAndLambdaShort(Chapter02.getListaUsuarios());
+		
+		assertEquals(			unsortedList.size(),		sortedList.size()	);
+		assertNotEquals(		sortedList,					unsortedList);
+		assertNotSame(			sortedList,					unsortedList);
+		
+		boolean areAllUsersEquals = assertAllUsersAreEquals(unsortedList,				sortedList);
+		assertFalse(		areAllUsersEquals	);
+		
+		for (Usuario user: sortedList) {
+			UtilsLibrary.print( user.getNome() );
+		}
 	}
 	
 	@Test
@@ -27,16 +65,7 @@ public class Chapter05Test {
 		
 		assertEquals(	unsortedList01.size(),	unsortedList02.size()	);
 		
-		boolean areAllUsersEquals = true;
-		for ( int i = 0; i < unsortedList01.size()  ; i = i + 1 ) {
-			Usuario user01 = unsortedList01.get(i);
-			Usuario user02 = unsortedList02.get(i);
-			
-			if ( !user01.equals(user02) ) {
-				areAllUsersEquals = false;
-			}
-		}
-		
+		boolean areAllUsersEquals = assertAllUsersAreEquals(unsortedList01, unsortedList02);
 		assertTrue(		areAllUsersEquals	);
 	}
 	
@@ -47,17 +76,38 @@ public class Chapter05Test {
 		
 		assertEquals(	unsortedList01.size(),	unsortedList02.size()	);
 		
-		boolean areAllUsersTheSame = true;
-		for ( int i = 0; i < unsortedList01.size()  ; i = i + 1 ) {
-			Usuario user01 = unsortedList01.get(i);
-			Usuario user02 = unsortedList02.get(i);
+		boolean areAllUsersTheSame = assertAllUsersAreSame(unsortedList01, unsortedList02);
+		
+		assertFalse(	areAllUsersTheSame	);
+	}
+	
+	private boolean assertAllUsersAreEquals(List<Usuario> pList01, List<Usuario> pList02) {
+		boolean areAllUsersEquals = true;
+		for ( int i = 0; i < pList01.size()  ; i = i + 1 ) {
+			Usuario user01 = pList01.get(i);
+			Usuario user02 = pList02.get(i);
 			
-			if ( user01 != user02 ) {
-				areAllUsersTheSame = false;
+			if ( !user01.equals(user02) ) {
+				areAllUsersEquals = false;
+				break;
 			}
 		}
 		
-		assertFalse(	areAllUsersTheSame	);
+		return areAllUsersEquals;
+	}
+	
+	private boolean assertAllUsersAreSame(List<Usuario> pList01, List<Usuario> pList02) {
+		boolean areAllUsersTheSame = true;
+		for ( int i = 0; i < pList01.size()  ; i = i + 1 ) {
+			Usuario user01 = pList01.get(i);
+			Usuario user02 = pList02.get(i);
+			
+			if ( user01 != user02 ) {
+				areAllUsersTheSame = false;
+				break;
+			}
+		}
+		return areAllUsersTheSame;
 	}
 	
 }

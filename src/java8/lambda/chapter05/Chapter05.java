@@ -1,5 +1,6 @@
 package java8.lambda.chapter05;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -35,6 +36,12 @@ public class Chapter05 {
 	public static List<Usuario> sortWithComparatorAndLambdaShort(List<Usuario> pUsersToBeSorted) {
 		pUsersToBeSorted.sort(Comparator.comparing(user -> user.getNome()));
 		return pUsersToBeSorted;
+	}
+	
+	public static void collectionsSort() {
+		List<String> words = Arrays.asList("House of Codes", "Allure", "KeyElon");
+		Collections.sort(words);
+		words.sort();
 	}
 	
 	private static Comparator<Usuario> getComparatorCaseSensitive() {
