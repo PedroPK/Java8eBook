@@ -2,13 +2,13 @@ package java8.lambda.chapter02;
 
 public interface User {
 	
-	public String getNome();
-	public int getPontuacao();
-	public void adicionarPontuacao(int pPontos);
-	public void subtrairPontuacao(int pPontos);
-	public void tornarModerador();
-	public void revogarModerador();
-	public boolean isModerador();
+	public String getName();
+	public int getScore();
+	public void addScorePoints(int pPontos);
+	public void subtractScorePoints(int pPontos);
+	public void becameModerator();
+	public void revokeModerator();
+	public boolean isModerator();
 	public boolean equals(User pUser);
 	
 }

@@ -15,8 +15,8 @@ public class Chapter02 {
 	public static void imprimirNomes() {
 		print("-- imprimirNomes --");
 		
-		List<Usuario> usuarios = getListaUsuarios();
-		for (Usuario usuario: usuarios) {
+		List<User> usuarios = getListaUsuarios();
+		for (User usuario: usuarios) {
 			System.out.println(usuario.getName());
 		}
 		
@@ -26,14 +26,14 @@ public class Chapter02 {
 	public static void imprimirNomesForEach() {
 		print("-- imprimirNomesForEach --");
 		
-		Consumer<Usuario> impressoraDeNomes = 
-			new Consumer<Usuario>() {
-				public void accept(Usuario pUsuario) {
+		Consumer<User> impressoraDeNomes = 
+			new Consumer<User>() {
+				public void accept(User pUsuario) {
 					System.out.println(pUsuario.getName());
 				}
 			};
 		
-		List<Usuario> usuarios = getListaUsuarios();
+		List<User> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomes);
 		
 		imprimirSeparadorLinha();
@@ -42,9 +42,9 @@ public class Chapter02 {
 	public static void imprimirNomesLambdaExtenso() {
 		print("-- imprimirNomesLambdaExtenso --");
 		
-		Consumer<Usuario> impressoraDeNomesLambda =
-			(Usuario usuario) -> {System.out.println(usuario.getName());};
-		List<Usuario> usuarios = getListaUsuarios();
+		Consumer<User> impressoraDeNomesLambda =
+			(User usuario) -> {System.out.println(usuario.getName());};
+		List<User> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
 		imprimirSeparadorLinha();
@@ -53,9 +53,9 @@ public class Chapter02 {
 	public static void imprimirNomesLambdaTipoImplicitoComChaves() {
 		print("-- imprimirNomesLambdaTipoImplicitoComChaves --");
 		
-		Consumer<Usuario> impressoraDeNomesLambda =
+		Consumer<User> impressoraDeNomesLambda =
 			usuario -> {System.out.println(usuario.getName());};
-		List<Usuario> usuarios = getListaUsuarios();
+		List<User> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
 		imprimirSeparadorLinha();
@@ -64,9 +64,9 @@ public class Chapter02 {
 	public static void imprimirNomesLambdaTipoImplicitoSemChaves() {
 		print("-- imprimirNomesLambdaTipoImplicitoSemChaves --");
 		
-		Consumer<Usuario> impressoraDeNomesLambda =
+		Consumer<User> impressoraDeNomesLambda =
 			usuario -> System.out.println(usuario.getName());
-		List<Usuario> usuarios = getListaUsuarios();
+		List<User> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
 		imprimirSeparadorLinha();
@@ -75,24 +75,24 @@ public class Chapter02 {
 	public static void imprimirNomesLambdaEnxuto() {
 		print("-- imprimirNomesLambdaEnxuto --");
 		
-		List<Usuario> usuarios = getListaUsuarios();
+		List<User> usuarios = getListaUsuarios();
 		usuarios.forEach(usuario -> System.out.println(usuario.getName()));
 		
 		imprimirSeparadorLinha();
 	}
 	
-	public static List<Usuario> getListaUsuarios() {
-		Usuario um			= new Usuario("Paulo Silveira");
-		Usuario umPontoUm	= new Usuario("Paulo SILVEIRA");
-		Usuario dois		= new Usuario("Rodrigo Turini");
-		Usuario tres		= new Usuario("Guilherme Silveira");
+	public static List<User> getListaUsuarios() {
+		User um			= new Usuario("Paulo Silveira");
+		User umPontoUm	= new Usuario("Paulo SILVEIRA");
+		User dois		= new Usuario("Rodrigo Turini");
+		User tres		= new Usuario("Guilherme Silveira");
 		
-		um.adicionarPontuacao(10);
-		umPontoUm.adicionarPontuacao(17);
-		dois.adicionarPontuacao(15);
-		tres.adicionarPontuacao(25);
+		um.addScorePoints(10);
+		umPontoUm.addScorePoints(17);
+		dois.addScorePoints(15);
+		tres.addScorePoints(25);
 		
-		List<Usuario> usuarios = Arrays.asList(um, umPontoUm, dois, tres);
+		List<User> usuarios = Arrays.asList(um, umPontoUm, dois, tres);
 		return usuarios;
 	}
 	
