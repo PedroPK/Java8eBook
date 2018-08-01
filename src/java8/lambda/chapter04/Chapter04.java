@@ -16,7 +16,7 @@ public class Chapter04 {
 		
 		Consumer<Usuario> userConsumer = user -> print("Before printing names.");
 		
-		Consumer<Usuario> printUsersNames = user -> print(user.getNome() + "\n");
+		Consumer<Usuario> printUsersNames = user -> print(user.getName() + "\n");
 		
 		users.forEach(userConsumer.andThen(printUsersNames));
 	}
@@ -31,14 +31,14 @@ public class Chapter04 {
 		List<Usuario> users = getUsersList();
 		users.removeIf(lessThenHundredPoints);
 		
-		users.forEach(user -> print(user.getNome()));
+		users.forEach(user -> print(user.getName()));
 	}
 	
 	public static void lambdaImplicitPredicateExample() {
 		List<Usuario> users = getUsersList();
 		users.removeIf(user -> user.getPontuacao() < 100);
 		
-		users.forEach(user -> print(user.getNome()));
+		users.forEach(user -> print(user.getName()));
 	}
 	
 	public static List<Usuario> getUsersList() {

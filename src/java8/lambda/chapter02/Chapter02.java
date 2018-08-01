@@ -17,7 +17,7 @@ public class Chapter02 {
 		
 		List<Usuario> usuarios = getListaUsuarios();
 		for (Usuario usuario: usuarios) {
-			System.out.println(usuario.getNome());
+			System.out.println(usuario.getName());
 		}
 		
 		imprimirSeparadorLinha();
@@ -29,7 +29,7 @@ public class Chapter02 {
 		Consumer<Usuario> impressoraDeNomes = 
 			new Consumer<Usuario>() {
 				public void accept(Usuario pUsuario) {
-					System.out.println(pUsuario.getNome());
+					System.out.println(pUsuario.getName());
 				}
 			};
 		
@@ -43,7 +43,7 @@ public class Chapter02 {
 		print("-- imprimirNomesLambdaExtenso --");
 		
 		Consumer<Usuario> impressoraDeNomesLambda =
-			(Usuario usuario) -> {System.out.println(usuario.getNome());};
+			(Usuario usuario) -> {System.out.println(usuario.getName());};
 		List<Usuario> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
@@ -54,7 +54,7 @@ public class Chapter02 {
 		print("-- imprimirNomesLambdaTipoImplicitoComChaves --");
 		
 		Consumer<Usuario> impressoraDeNomesLambda =
-			usuario -> {System.out.println(usuario.getNome());};
+			usuario -> {System.out.println(usuario.getName());};
 		List<Usuario> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
@@ -65,7 +65,7 @@ public class Chapter02 {
 		print("-- imprimirNomesLambdaTipoImplicitoSemChaves --");
 		
 		Consumer<Usuario> impressoraDeNomesLambda =
-			usuario -> System.out.println(usuario.getNome());
+			usuario -> System.out.println(usuario.getName());
 		List<Usuario> usuarios = getListaUsuarios();
 		usuarios.forEach(impressoraDeNomesLambda);
 		
@@ -76,7 +76,7 @@ public class Chapter02 {
 		print("-- imprimirNomesLambdaEnxuto --");
 		
 		List<Usuario> usuarios = getListaUsuarios();
-		usuarios.forEach(usuario -> System.out.println(usuario.getNome()));
+		usuarios.forEach(usuario -> System.out.println(usuario.getName()));
 		
 		imprimirSeparadorLinha();
 	}
@@ -87,6 +87,10 @@ public class Chapter02 {
 		Usuario dois		= new Usuario("Rodrigo Turini");
 		Usuario tres		= new Usuario("Guilherme Silveira");
 		
+		um.adicionarPontuacao(10);
+		umPontoUm.adicionarPontuacao(17);
+		dois.adicionarPontuacao(15);
+		tres.adicionarPontuacao(25);
 		
 		List<Usuario> usuarios = Arrays.asList(um, umPontoUm, dois, tres);
 		return usuarios;

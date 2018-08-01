@@ -13,7 +13,7 @@ public class Usuario {
 	}
 	
 	
-	public String getNome() {
+	public String getName() {
 		return this.aNome;
 	}
 	
@@ -43,7 +43,7 @@ public class Usuario {
 	
 	public boolean equals(Usuario pUser) {
 		return
-			this.getNome()		.equals(	pUser.getNome()			)	&&
+			this.getName()		.equals(	pUser.getName()			)	&&
 			this.getPontuacao()	==			pUser.getPontuacao();
 	}
 	

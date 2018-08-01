@@ -53,9 +53,9 @@ public class Chapter05Test {
 		boolean areAllUsersEquals = assertAllUsersAreEquals(unsortedList,				sortedList);
 		assertFalse(		areAllUsersEquals	);
 		
-		for (Usuario user: sortedList) {
+		/*for (Usuario user: sortedList) {
 			UtilsLibrary.print( user.getNome() );
-		}
+		}*/
 	}
 	
 	@Test
@@ -79,6 +79,52 @@ public class Chapter05Test {
 		boolean areAllUsersTheSame = assertAllUsersAreSame(unsortedList01, unsortedList02);
 		
 		assertFalse(	areAllUsersTheSame	);
+	}
+	
+	@Test
+	public void testComparatorNaturalOrder() {
+		List<String> sortedList = Chapter05.sortComparatorByNaturalOrder();
+		/*for ( String word: sortedList ) {
+			UtilsLibrary.print(word);
+		}*/
+	}
+	
+	@Test
+	public void testComparatorReverseOrder() {
+		List<String> sortedList = Chapter05.sortComparatorByReverseOrder();
+		/*for ( String word: sortedList ) {
+			UtilsLibrary.print(word);
+		}*/
+	}
+	
+	@Test
+	public void testCompareNameThroughFunction() {
+		List<Usuario> usersList = Chapter05.compareNameThroughFunction();
+		
+		/*UtilsLibrary.print("=== testCompareNameThroughFunction ===");
+		for ( Usuario user: usersList ) {
+			UtilsLibrary.print(user.getNome());
+		}*/
+	}
+	
+	@Test
+	public void testComparePontuationThroughToIntFunction() {
+		List<Usuario> usersList = Chapter05.comparePontuationThroughToIntFunction();
+		
+		/*UtilsLibrary.print("=== testComparePontuationThroughToIntFunction ===");
+		for ( Usuario user: usersList ) {
+			UtilsLibrary.print(user.getNome() + " = " + user.getPontuacao());
+		}*/
+	}
+	
+	@Test
+	public void testcomparePontuationThroughComparatorComparingInt() {
+		List<Usuario> usersList = Chapter05.comparePontuationThroughComparatorComparingInt();
+		
+		UtilsLibrary.print("=== testcomparePontuationThroughComparatorComparingInt ===");
+		for ( Usuario user: usersList ) {
+			UtilsLibrary.print(user.getName() + " = " + user.getPontuacao());
+		}
 	}
 	
 	private boolean assertAllUsersAreEquals(List<Usuario> pList01, List<Usuario> pList02) {
