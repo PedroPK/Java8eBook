@@ -1,50 +1,57 @@
 package java8.lambda.chapter02;
 
-public class Usuario {
+public class Usuario implements User {
 	
-	private String		aNome;
-	private int			aPontuacao;
+	private String		aName;
+	private int			aScore;
 	private boolean		aIsModerador;
 	
 	public Usuario(String pNome) {
-		this.aNome			= pNome;
-		this.aPontuacao		= 0;
+		this.aName			= pNome;
+		this.aScore		= 0;
 		this.aIsModerador	= false;
 	}
 	
-	
-	public String getNome() {
-		return this.aNome;
+	@Override
+	public String getName() {
+		return this.aName;
 	}
 	
-	public int getPontuacao() {
-		return this.aPontuacao;
+	@Override
+	public int getScore() {
+		return this.aScore;
 	}
 	
-	public void adicionarPontuacao(int pPontos) {
-		this.aPontuacao = this.aPontuacao + pPontos;
+	@Override
+	public void addScorePoints(int pPontos) {
+		this.aScore = this.aScore + pPontos;
 	}
 	
-	public void subtrairPontuacao(int pPontos) {
-		this.aPontuacao = this.aPontuacao - pPontos;
+	@Override
+	public void subtractScorePoints(int pPontos) {
+		this.aScore = this.aScore - pPontos;
 	}
 	
-	public void tornarModerador() {
+	@Override
+	public void becameModerator() {
 		this.aIsModerador = true;
 	}
 	
-	public void revogarModerador() {
+	@Override
+	public void revokeModerator() {
 		this.aIsModerador = false;
 	}
 	
-	public boolean isModerador() {
+	@Override
+	public boolean isModerator() {
 		return this.aIsModerador;
 	}
 	
-	public boolean equals(Usuario pUser) {
+	@Override
+	public boolean equals(User pUser) {
 		return
-			this.getNome()		.equals(	pUser.getNome()			)	&&
-			this.getPontuacao()	==			pUser.getPontuacao();
+			this.getName()		.equals(	pUser.getName()			)	&&
+			this.getScore()	==			pUser.getScore();
 	}
 	
 }
