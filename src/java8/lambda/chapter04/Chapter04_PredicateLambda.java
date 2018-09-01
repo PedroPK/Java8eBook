@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 import java8.lambda.chapter02.User;
 import java8.lambda.chapter02.Usuario;
 
-public class Chapter04 {
+public class Chapter04_PredicateLambda {
 	
 	public static void forEachExample() {
 		List<User> users = getUsersList();

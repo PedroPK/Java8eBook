@@ -10,16 +10,16 @@ import java.util.List;
 
 import org.junit.Test;
 
-import java8.lambda.chapter02.Chapter02;
+import java8.lambda.chapter02.Chapter02_LambdaExpressions;
 import java8.lambda.chapter02.User;
 import java8.utils.UtilsLibrary;
 
-public class Chapter05Test {
+public class Chapter05_ComparatorLambda_Test {
 	
 	@Test
 	public void ordenateUsers() {
-		List<User> unsortedList	= Chapter02.getListaUsuarios();
-		List<User> sortedList	= Chapter05.sort(Chapter02.getListaUsuarios());
+		List<User> unsortedList	= Chapter02_LambdaExpressions.getUsersList();
+		List<User> sortedList	= Chapter05_ComparatorLambda.sort(Chapter02_LambdaExpressions.getUsersList());
 		
 		assertEquals(			unsortedList.size(),		sortedList.size()	);
 		assertNotEquals(		sortedList,					unsortedList);
@@ -31,8 +31,8 @@ public class Chapter05Test {
 	
 	@Test
 	public void testSortWithComparatorAndLambdaExtended() {
-		List<User> unsortedList	= Chapter02.getListaUsuarios();
-		List<User> sortedList	= Chapter05.sortWithComparatorAndLambdaExtended(Chapter02.getListaUsuarios());
+		List<User> unsortedList	= Chapter02_LambdaExpressions.getUsersList();
+		List<User> sortedList	= Chapter05_ComparatorLambda.sortWithComparatorAndLambdaExtended(Chapter02_LambdaExpressions.getUsersList());
 		
 		assertEquals(			unsortedList.size(),		sortedList.size()	);
 		assertNotEquals(		sortedList,					unsortedList);
@@ -48,8 +48,8 @@ public class Chapter05Test {
 	
 	@Test
 	public void testSortWithComparatorAndLambdaShort() {
-		List<User> unsortedList	= Chapter02.getListaUsuarios();
-		List<User> sortedList	= Chapter05.sortWithComparatorAndLambdaShort(Chapter02.getListaUsuarios());
+		List<User> unsortedList	= Chapter02_LambdaExpressions.getUsersList();
+		List<User> sortedList	= Chapter05_ComparatorLambda.sortWithComparatorAndLambdaShort(Chapter02_LambdaExpressions.getUsersList());
 		
 		assertEquals(			unsortedList.size(),		sortedList.size()	);
 		assertNotEquals(		sortedList,					unsortedList);
@@ -65,8 +65,8 @@ public class Chapter05Test {
 	
 	@Test
 	public void testEqualsUnsortedUsers() {
-		List<User> unsortedList01	= Chapter02.getListaUsuarios();
-		List<User> unsortedList02	= Chapter02.getListaUsuarios();
+		List<User> unsortedList01	= Chapter02_LambdaExpressions.getUsersList();
+		List<User> unsortedList02	= Chapter02_LambdaExpressions.getUsersList();
 		
 		assertEquals(	unsortedList01.size(),	unsortedList02.size()	);
 		
@@ -76,8 +76,8 @@ public class Chapter05Test {
 	
 	@Test
 	public void testSameUnsortedUsers() {
-		List<User> unsortedList01	= Chapter02.getListaUsuarios();
-		List<User> unsortedList02	= Chapter02.getListaUsuarios();
+		List<User> unsortedList01	= Chapter02_LambdaExpressions.getUsersList();
+		List<User> unsortedList02	= Chapter02_LambdaExpressions.getUsersList();
 		
 		assertEquals(	unsortedList01.size(),	unsortedList02.size()	);
 		
@@ -88,7 +88,7 @@ public class Chapter05Test {
 	
 	@Test
 	public void testComparatorNaturalOrder() {
-		List<String> sortedList = Chapter05.sortComparatorByNaturalOrder();
+		List<String> sortedList = Chapter05_ComparatorLambda.sortComparatorByNaturalOrder();
 		/*for ( String word: sortedList ) {
 			UtilsLibrary.print(word);
 		}*/
@@ -96,7 +96,7 @@ public class Chapter05Test {
 	
 	@Test
 	public void testComparatorReverseOrder() {
-		List<String> sortedList = Chapter05.sortComparatorByReverseOrder();
+		List<String> sortedList = Chapter05_ComparatorLambda.sortComparatorByReverseOrder();
 		/*for ( String word: sortedList ) {
 			UtilsLibrary.print(word);
 		}*/
@@ -104,7 +104,7 @@ public class Chapter05Test {
 	
 	@Test
 	public void testCompareNameThroughFunction() {
-		List<User> usersList = Chapter05.compareNameThroughFunction();
+		List<User> usersList = Chapter05_ComparatorLambda.compareNameThroughFunction();
 		
 		/*UtilsLibrary.print("=== testCompareNameThroughFunction ===");
 		for ( User user: usersList ) {
@@ -114,7 +114,7 @@ public class Chapter05Test {
 	
 	@Test
 	public void testComparePontuationThroughToIntFunction() {
-		List<User> usersList = Chapter05.comparePontuationThroughToIntFunction();
+		List<User> usersList = Chapter05_ComparatorLambda.comparePontuationThroughToIntFunction();
 		
 		/*UtilsLibrary.print("=== testComparePontuationThroughToIntFunction ===");
 		for ( User user: usersList ) {
@@ -124,7 +124,7 @@ public class Chapter05Test {
 	
 	@Test
 	public void testcomparePontuationThroughComparatorComparingInt() {
-		List<User> usersList = Chapter05.comparePontuationThroughComparatorComparingInt();
+		List<User> usersList = Chapter05_ComparatorLambda.comparePontuationThroughComparatorComparingInt();
 		
 		UtilsLibrary.print("=== testcomparePontuationThroughComparatorComparingInt ===");
 		for ( User user: usersList ) {

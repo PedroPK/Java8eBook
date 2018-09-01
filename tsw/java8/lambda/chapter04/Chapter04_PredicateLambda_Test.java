@@ -3,23 +3,23 @@ package java8.lambda.chapter04;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class Chapter04Test {
+public class Chapter04_PredicateLambda_Test {
 	
 	@Ignore
 	@Test
 	public void testForEachExample() {
-		Chapter04.forEachExample();
+		Chapter04_PredicateLambda.forEachExample();
 	}
 	
 	@Ignore
 	@Test
 	public void testPredicateExample() {
-		Chapter04.predicateExample();
+		Chapter04_PredicateLambda.predicateExample();
 	}
 	
 	@Test
 	public void testLambdaImplicitPredicateExample() {
-		Chapter04.lambdaImplicitPredicateExample();
+		Chapter04_PredicateLambda.lambdaImplicitPredicateExample();
 	}
 	
 }

@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
-import java8.lambda.chapter02.Chapter02;
+import java8.lambda.chapter02.Chapter02_LambdaExpressions;
 import java8.lambda.chapter02.User;
 
-public class Chapter05 {
+public class Chapter05_ComparatorLambda {
 	
 	public static List<User> sort(List<User> pUsersToBeSorted) {
 		Comparator<User> comparator = getComparatorCaseSensitive();
@@ -59,7 +59,7 @@ public class Chapter05 {
 		Function<User, String> extractName = user -> user.getName();
 		Comparator<User> comparatorByName = Comparator.comparing(extractName);
 		
-		List<User> usersList = Chapter02.getListaUsuarios();
+		List<User> usersList = Chapter02_LambdaExpressions.getUsersList();
 		usersList.sort(comparatorByName);
 		
 		return usersList;
@@ -69,14 +69,14 @@ public class Chapter05 {
 		ToIntFunction<User> extractPontuation = user -> user.getScore();
 		Comparator<User> comparatorByPontuation = Comparator.comparingInt(extractPontuation);
 		
-		List<User> usersList = Chapter02.getListaUsuarios();
+		List<User> usersList = Chapter02_LambdaExpressions.getUsersList();
 		usersList.sort(comparatorByPontuation);
 		
 		return usersList;
 	}
 	
 	public static List<User> comparePontuationThroughComparatorComparingInt() {
-		List<User> usersList = Chapter02.getListaUsuarios();
+		List<User> usersList = Chapter02_LambdaExpressions.getUsersList();
 		usersList.sort(Comparator.comparingInt(user -> user.getScore()));
 		
 		return usersList;
