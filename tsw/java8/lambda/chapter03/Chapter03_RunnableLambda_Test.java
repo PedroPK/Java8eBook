@@ -6,72 +6,72 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java8.lambda.chapter03.Chapter03;
+import java8.lambda.chapter03.Chapter03_RunnableLambda;
 
 @FixMethodOrder(MethodSorters.JVM)
-public class Chapter03Test {
+public class Chapter03_RunnableLambda_Test {
 	
 	@Ignore
 	@Test
 	public void testCreateRunnable() {
-		Chapter03.createRunnable();
+		Chapter03_RunnableLambda.createRunnable();
 	}
 	
 	@Ignore
 	@Test
 	public void testCreateRunnableWithLambda() {
-		Chapter03.createRunnableWithLambda();
+		Chapter03_RunnableLambda.createRunnableWithLambda();
 	}
 	
 	@Ignore
 	@Test
-	public void testCreateThreadWithShortLambda() {
-		Chapter03.createThreadWithShortLambda();
+	public void testCreateThreadWithLambdaLean() {
+		Chapter03_RunnableLambda.createThreadWithLambdaLean();
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithoutDot() {
-		Assert.assertTrue( Chapter03.validateCep("53130-080") );
+		Assert.assertTrue( Chapter03_RunnableLambda.validateCep("53130-080") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithoutDotWithoutHyfen() {
-		Assert.assertTrue( Chapter03.validateCep("53130080") );
+		Assert.assertTrue( Chapter03_RunnableLambda.validateCep("53130080") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithoutDotWithoutHyfenWithSpace() {
-		Assert.assertFalse( Chapter03.validateCep("53130 080") );
+		Assert.assertFalse( Chapter03_RunnableLambda.validateCep("53130 080") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithDot() {
-		Assert.assertTrue( Chapter03.validateCep("53.130-080") );
+		Assert.assertTrue( Chapter03_RunnableLambda.validateCep("53.130-080") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithDotWithoutHyphen() {
-		Assert.assertTrue( Chapter03.validateCep("53.130080") );
+		Assert.assertTrue( Chapter03_RunnableLambda.validateCep("53.130080") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWith7Digits() {
-		Assert.assertFalse( Chapter03.validateCep("5313008") );
+		Assert.assertFalse( Chapter03_RunnableLambda.validateCep("5313008") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWith9Digits() {
-		Assert.assertFalse( Chapter03.validateCep("531300800") );
+		Assert.assertFalse( Chapter03_RunnableLambda.validateCep("531300800") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWith10Digits() {
-		Assert.assertFalse( Chapter03.validateCep("5313008000") );
+		Assert.assertFalse( Chapter03_RunnableLambda.validateCep("5313008000") );
 	}
 	
 	@Test
 	public void testCepValidationOlindaWithAtSymbol() {
-		Assert.assertFalse( Chapter03.validateCep("53130080@") );
+		Assert.assertFalse( Chapter03_RunnableLambda.validateCep("53130080@") );
 	}
 	
 }

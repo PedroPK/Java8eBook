@@ -6,94 +6,94 @@ import java.util.function.Consumer;
 
 import static java8.utils.UtilsLibrary.*;
 
-public class Chapter02 {
+public class Chapter02_LambdaExpressions {
 	
 	/**
 	 * Public Methods
 	 */
 	
-	public static void imprimirNomes() {
-		print("-- imprimirNomes --");
+	public static void printNames() {
+		print("-- printNames() --");
 		
-		List<User> usuarios = getListaUsuarios();
-		for (User usuario: usuarios) {
-			System.out.println(usuario.getName());
+		List<User> usersList = getUsersList();
+		for (User user: usersList) {
+			System.out.println(user.getName());
 		}
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static void imprimirNomesForEach() {
-		print("-- imprimirNomesForEach --");
+	public static void printNamesForEach() {
+		print("-- printNamesForEach() --");
 		
-		Consumer<User> impressoraDeNomes = 
+		Consumer<User> namesPrinter = 
 			new Consumer<User>() {
-				public void accept(User pUsuario) {
-					System.out.println(pUsuario.getName());
+				public void accept(User pUser) {
+					System.out.println(pUser.getName());
 				}
 			};
 		
-		List<User> usuarios = getListaUsuarios();
-		usuarios.forEach(impressoraDeNomes);
+		List<User> usersList = getUsersList();
+		usersList.forEach(namesPrinter);
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static void imprimirNomesLambdaExtenso() {
-		print("-- imprimirNomesLambdaExtenso --");
+	public static void printNamesLambdaExtensive() {
+		print("-- printNamesLambdaExtensive() --");
 		
-		Consumer<User> impressoraDeNomesLambda =
-			(User usuario) -> {System.out.println(usuario.getName());};
-		List<User> usuarios = getListaUsuarios();
-		usuarios.forEach(impressoraDeNomesLambda);
+		Consumer<User> namesPrinterLambda =
+			(User user) -> {System.out.println(user.getName());};
+		List<User> usersList = getUsersList();
+		usersList.forEach(namesPrinterLambda);
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static void imprimirNomesLambdaTipoImplicitoComChaves() {
-		print("-- imprimirNomesLambdaTipoImplicitoComChaves --");
+	public static void printNamesLambdaImplicitTypeWithBrackets() {
+		print("-- printNamesLambdaImplicitTypeWithBrackets() --");
 		
-		Consumer<User> impressoraDeNomesLambda =
-			usuario -> {System.out.println(usuario.getName());};
-		List<User> usuarios = getListaUsuarios();
-		usuarios.forEach(impressoraDeNomesLambda);
+		Consumer<User> namesPrinterLambda =
+			user -> {System.out.println(user.getName());};
+		List<User> userList = getUsersList();
+		userList.forEach(namesPrinterLambda);
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static void imprimirNomesLambdaTipoImplicitoSemChaves() {
-		print("-- imprimirNomesLambdaTipoImplicitoSemChaves --");
+	public static void printNamesLambdaImplicitTypeWithoutBrackets() {
+		print("-- printNamesLambdaImplicitTypeWithoutBrackets() --");
 		
-		Consumer<User> impressoraDeNomesLambda =
+		Consumer<User> namesPrinterLambda =
 			usuario -> System.out.println(usuario.getName());
-		List<User> usuarios = getListaUsuarios();
-		usuarios.forEach(impressoraDeNomesLambda);
+		List<User> usersList = getUsersList();
+		usersList.forEach(namesPrinterLambda);
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static void imprimirNomesLambdaEnxuto() {
-		print("-- imprimirNomesLambdaEnxuto --");
+	public static void printNamesLambdaLean() {
+		print("-- printNamesLambdaLean() --");
 		
-		List<User> usuarios = getListaUsuarios();
-		usuarios.forEach(usuario -> System.out.println(usuario.getName()));
+		List<User> usersList = getUsersList();
+		usersList.forEach(user -> System.out.println(user.getName()));
 		
-		imprimirSeparadorLinha();
+		printLineSeparator();
 	}
 	
-	public static List<User> getListaUsuarios() {
-		User um			= new Usuario("Paulo Silveira");
-		User umPontoUm	= new Usuario("Paulo SILVEIRA");
-		User dois		= new Usuario("Rodrigo Turini");
-		User tres		= new Usuario("Guilherme Silveira");
+	public static List<User> getUsersList() {
+		User firstUser			= new Usuario("Paulo Silveira");
+		User firstUserVeriation	= new Usuario("Paulo SILVEIRA");
+		User secondUser			= new Usuario("Rodrigo Turini");
+		User thirdUser			= new Usuario("Guilherme Silveira");
 		
-		um.addScorePoints(10);
-		umPontoUm.addScorePoints(17);
-		dois.addScorePoints(15);
-		tres.addScorePoints(25);
+		firstUser			.addScorePoints(10);
+		firstUserVeriation	.addScorePoints(17);
+		secondUser			.addScorePoints(15);
+		thirdUser			.addScorePoints(25);
 		
-		List<User> usuarios = Arrays.asList(um, umPontoUm, dois, tres);
-		return usuarios;
+		List<User> usersList = Arrays.asList(firstUser, firstUserVeriation, secondUser, thirdUser);
+		return usersList;
 	}
 	
 	/**

@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.JVM)
-public class Chapter02Test {
+public class Chapter02_LambdaExpressions_Test {
 	
 	@Test
 	public void testPrintNames() {
