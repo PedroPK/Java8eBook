@@ -2,7 +2,7 @@ package java8.utils;
 
 public class UtilsLibrary {
 	
-	public static void imprimirSeparadorLinha() {
+	public static void printLineSeparator() {
 		print("-- ----------------- --\n");
 	}
 	

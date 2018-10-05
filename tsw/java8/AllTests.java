@@ -4,12 +4,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import java8.lambda.chapter02.Chapter02Test;
-import java8.lambda.chapter03.Chapter03Test;
+import java8.lambda.chapter02.Chapter02_LambdaExpressions_Test;
+import java8.lambda.chapter03.Chapter03_RunnableLambda_Test;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	Chapter02Test.class,
-	Chapter03Test.class
+	Chapter02_LambdaExpressions_Test.class,
+	Chapter03_RunnableLambda_Test.class
 })
 public class AllTests {}
