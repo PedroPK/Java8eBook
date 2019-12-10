@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class WhizlabsTest {
-
+	
 	@Test
 	public void testMain() {
 		fail("Not yet implemented");
 	}
-
+	
 	@Test
 	public void testPart03() {
 		fail("Not yet implemented");
 	}
-
+	
 	@Test
 	public void testPart02() {
 		Whizlabs.part02(Whizlabs.part01());
@@ -43,5 +43,5 @@ public class WhizlabsTest {
 		
 		assertEquals("Uppercase A", response);
 	}
-
+	
 }

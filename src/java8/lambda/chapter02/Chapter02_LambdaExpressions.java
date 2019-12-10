@@ -26,13 +26,13 @@ public class Chapter02_LambdaExpressions {
 	public static void printNamesForEach() {
 		print("-- printNamesForEach() --");
 		
-		Consumer<User> namesPrinter = 
+		Consumer<User> namesPrinter =
 			new Consumer<User>() {
 				public void accept(User pUser) {
 					System.out.println(pUser.getName());
 				}
 			};
-		
+			
 		List<User> usersList = getUsersList();
 		usersList.forEach(namesPrinter);
 		
@@ -43,7 +43,9 @@ public class Chapter02_LambdaExpressions {
 		print("-- printNamesLambdaExtensive() --");
 		
 		Consumer<User> namesPrinterLambda =
-			(User user) -> {System.out.println(user.getName());};
+			(User user) -> {
+				System.out.println(		user.getName()	);
+			};
 		List<User> usersList = getUsersList();
 		usersList.forEach(namesPrinterLambda);
 		
@@ -54,7 +56,9 @@ public class Chapter02_LambdaExpressions {
 		print("-- printNamesLambdaImplicitTypeWithBrackets() --");
 		
 		Consumer<User> namesPrinterLambda =
-			user -> {System.out.println(user.getName());};
+			user -> {
+				System.out.println(user.getName());
+			};
 		List<User> userList = getUsersList();
 		userList.forEach(namesPrinterLambda);
 		
